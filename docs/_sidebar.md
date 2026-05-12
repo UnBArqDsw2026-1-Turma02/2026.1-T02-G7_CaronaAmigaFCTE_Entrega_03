@@ -32,3 +32,4 @@
 - **Atas**
   - [Modelo de Ata](/PadroesDeProjeto/3.5.IniciativasExtras/modelo_ata.md)
       
+<footer id="mb-footer"></footer>
