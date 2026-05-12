@@ -1,11 +1,65 @@
-# 3.2. Módulo Padrões de Projeto GoFs Estruturais
+# Padrão de Projeto - Facade
 
-Foco_2: Padrões de Projeto GoFs Estruturais.
+## Introdução
 
-Entrega Mínima: 1 Padrão GoF Estrutural, com nível de modelagem e nível de implementação evidenciados (ou seja, código rodando e hospedado no repositório do projeto).
+_Resumo breve do que é o padrão e por que ele é relevante no Carona Amiga FCTE._
 
-Apresentação (para a professora via vídeo enviado por e-mail) explicando o GoF Estrutural, com: (i) rastro claro aos membros participantes (MOSTRAR QUADRO DE PARTICIPAÇÕES & COMMITS); (ii) justificativas & senso crítico sobre o padrão GOF estrutural; e (iii) comentários gerais sobre o trabalho em equipe. Tempo da Apresentação: +/- 5min. Recomendação: Apresentar diretamente via Wiki ou GitPages do Projeto. Baixar os conteúdos com antecedência, evitando problemas de internet no momento de exposição via Vídeo nas Dinâmicas de Avaliação. Deve ser mostrado o GoF Estrutural em execução no vídeo.
+## Objetivos
 
-A Wiki ou GitPages do Projeto deve conter um tópico dedicado ao Módulo Padrões de Projeto GoFs Estruturais, com 1 padrão GoF Estrutural (modelagem & implementação, com código rodando), histórico de versões, referências, e demais detalhamentos gerados pela equipe nesse escopo.
+_Listar o que este artefato pretende documentar no projeto._
 
-Demais orientações disponíveis nas Diretrizes (vide Moodle).
+## Metodologia
+
+_Explicar, em alto nível, como o conteúdo foi produzido e quais artefatos do projeto serviram de base._
+
+## Explicação do Padrão
+
+### Intenção
+
+_Descrever o objetivo central do padrão._
+
+### Motivação
+
+_Apontar o problema que o padrão resolve no contexto do sistema._
+
+### Aplicabilidade
+
+_Indicar em quais situações o padrão faz sentido no Carona Amiga FCTE._
+
+### Participantes
+
+_Listar os papéis principais envolvidos no padrão._
+
+### Colaborações
+
+_Mostrar, em termos gerais, como os participantes interagem._
+
+### Consequências
+
+_Registrar benefícios, custos e impactos de usar o padrão._
+
+### Implementação
+
+_Apontar como o padrão poderia ser estruturado no projeto._
+
+### Padrões Relacionados
+
+_Citar padrões que se conectam ao padrão escolhido._
+
+## Recorte do Projeto e TOI Ilustrativo
+
+_Definir qual parte do Carona Amiga FCTE será usada como exemplo e indicar, de forma resumida, como o padrão apareceria no diagrama de classes._
+
+## Conclusão
+
+_Fechar o artefato com uma síntese do encaixe do padrão no domínio do projeto._
+
+## Referências Bibliográficas
+
+> <a id="ref1"></a> Referência 1 utilizada para embasar o conteúdo._
+
+## Histórico de Versões
+
+| Versão | Data | Descrição | Autor(es) | Revisor(es) | Detalhes da revisão |
+| :----: | :--: | --------- | ----------- | ------ | :---: |
+| 1.0 | 12/05/2026 | Criação do esqueleto do documento | _a definir_ | _a definir_ | Estrutura básica com as seções principais |

@@ -56,7 +56,7 @@ _Fechar o artefato com uma síntese do encaixe do padrão no domínio do projeto
 
 ## Referências Bibliográficas
 
-> <a id="ref1"></a> Referência 1 utilizazda para embasar o conteúdo._
+> <a id="ref1"></a> Referência 1 utilizada para embasar o conteúdo._
 
 ## Histórico de Versões
 

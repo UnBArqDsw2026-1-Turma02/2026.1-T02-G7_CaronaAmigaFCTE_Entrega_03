@@ -1,14 +1,26 @@
 <!-- docs/_sidebar.md -->
 
-- [Home]()
+- [Home](/)
 - [Projetos](/Projeto/Projeto.md)
 
-* **Padrões de Projeto**
+- **Padrões de Projeto**
   * [3. Desenho de Software (Padrões de Projeto)](/PadroesDeProjeto/3.PadroesDeProjeto.md)
     * [3.1. Padrões de Projeto GoFs Criacionais](/PadroesDeProjeto/3.1.GoFsCriacionais.md)
-    - [Abstract Factory](/PadroesDeProjeto/3.1.1.AbstractFactory.md)
+      - [Abstract Factory](/PadroesDeProjeto/3.1.1.AbstractFactory.md)
+
     * [3.2. Padrões de Projeto GoFs Estruturais](/PadroesDeProjeto/3.2.GoFsEstruturais.md)
+      -
+
     * [3.3. Padrões de Projeto GoFs Comportamentais](/PadroesDeProjeto/3.3.GoFsComportamentais.md)
+      -
+
     * [3.4. Participações - Padrões de Projeto](/PadroesDeProjeto/3.4.ParticipacoesPadroes.md)
+      -
+
     * [3.5. Iniciativas Extras - Padrões de Projeto](/PadroesDeProjeto/3.5.IniciativasExtras.md)
+      - [Modelo Padrão de Projeto](/PadroesDeProjeto/3.5.IniciativasExtras/modelo_padrao-de-projeto.md)
+
+- **Atas**
+  - [1. Ata de Reunião](Atas/ata01.md)
+  - [Modelo de Ata](/PadroesDeProjeto/3.5.IniciativasExtras/modelo_ata.md)
       
