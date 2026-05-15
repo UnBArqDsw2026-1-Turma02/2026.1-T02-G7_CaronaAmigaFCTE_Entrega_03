@@ -19,7 +19,7 @@
       - [Proxy](/PadroesDeProjeto/3.2.Estruturais/Proxy.md)
 
     * [3.3. Padrões de Projeto GoFs Comportamentais](/PadroesDeProjeto/3.3.Comportamentais/3.3.GoFsComportamentais.md)
-      - [Iterator](/PadroesDeProjeto/3.3.Comportamentais/Iterator.md)
+      - [Method Template](/PadroesDeProjeto/3.3.Comportamentais/MethodTemplate.md)
       - [Observer](/PadroesDeProjeto/3.3.Comportamentais/Observer.md)
       - [State](/PadroesDeProjeto/3.3.Comportamentais/State.md)
       - [Strategy](/PadroesDeProjeto/3.3.Comportamentais/Strategy.md)
