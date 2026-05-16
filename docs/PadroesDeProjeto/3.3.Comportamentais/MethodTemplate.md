@@ -2,11 +2,25 @@
 
 ## Introdução
 
-_Resumo breve do que é o padrão e por que ele é relevante no Carona Amiga FCTE._
+De acordo com o [Factory Guru](https://refactoring.guru/pt-br/design-patterns/factory-method), o **Template Method**  é um padrão de projeto comportamental que define o esqueleto de um algoritmo na superclasse mas deixa as subclasses sobrescreverem etapas específicas do algoritmo sem modificar sua estrutura.
+
+No contexto do **Carona Amiga FCTE** — aplicativo de compartilhamento de caronas voltado à comunidade universitária da FCTE/UnB — o padrão é especialmente relevante porque o sistema oferece diferentes modalidades de carona (avulsa e recorrente) que compartilham um fluxo de publicação comum, mas diferem em como validam dados, notificam passageiros e confirmam embarques. O Template Method é a solução natural para evitar duplicação de código e garantir consistência entre essas modalidades.
+
 
 ## Objetivos
 
-_Listar o que este artefato pretende documentar no projeto._
+Este artefato tem por objetivo:
+
+* Documentar formalmente a aplicação do padrão Template Method no projeto Carona Amiga FCTE;
+
+* Descrever os participantes do padrão e como se mapeiam às classes do domínio;
+
+* Apresentar um recorte do diagrama de classes que evidencia a estrutura do padrão;
+
+* Registrar as consequências — benefícios e custos — da adoção do padrão no sistema;
+
+* Servir como referência para a equipe de desenvolvimento durante a fase de implementação.
+
 
 ## Metodologia
 
