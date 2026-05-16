@@ -24,7 +24,14 @@ Este artefato tem por objetivo:
 
 ## Metodologia
 
-_Explicar, em alto nível, como o conteúdo foi produzido e quais artefatos do projeto serviram de base._
+O conteúdo deste documento foi produzido a partir da análise dos seguintes artefatos do projeto:
+
+* (Diagrama de casos de uso)[https://unbarqdsw2026-1-turma02.github.io/2026.1-T02-G7_CaronaAmigaFCTE_Entrega_02/#/Modelagem/2.3.ModelagemOrganizacionalCasosDeUso/Diagrama_de_casos_de_uso](RF01–RF25), que identificou os fluxos de publicação e solicitação de caronas;
+
+* (Diagrama de classes UML)[https://unbarqdsw2026-1-turma02.github.io/2026.1-T02-G7_CaronaAmigaFCTE_Entrega_02/#/Modelagem/2.1.ModelagemEstatica/Diagrama_de_classes], com **foco** na hierarquia Carona → CaronaAvulsa / CaronaRecorrente;
+
+* Requisitos funcionais RF06 (publicar carona), RF07 (solicitar carona) e RF09 (carona recorrente), extraídos do backlog do projeto. 
+
 
 ## Explicação do Padrão
 
