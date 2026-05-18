@@ -31,5 +31,6 @@
 
 - **Atas**
   - [Modelo de Ata](/PadroesDeProjeto/3.5.IniciativasExtras/modelo_ata.md)
+  - [Ata 01](/PadroesDeProjeto/3.5.IniciativasExtras/ata1.md)
       
 <footer id="mb-footer"></footer>

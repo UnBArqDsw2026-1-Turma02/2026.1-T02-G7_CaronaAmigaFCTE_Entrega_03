@@ -16,6 +16,8 @@ Este artefato tem como finalidade:
 
 ## Metodologia
 
+Como ponto de partida, foi utilizada a discussão registrada na [Ata 1](../3.5.IniciativasExtras/ata1.md) (com gravação da reunião: https://youtu.be/y6FIosTab0s).
+
 1. Foi consultada a descrição do padrão **Bridge** no Refactoring.Guru [[1]](#ref1) e exemplos de implementação em TypeScript [[2]](#ref2).
 
 2. Para o recorte do projeto, foram consideradas as necessidades do domínio do **Carona Amiga FCTE** (um web app que conecta motoristas e passageiros) e a organização de artefatos da entrega, em especial o [Diagrama de Classes](https://unbarqdsw2026-1-turma02.github.io/2026.1-T02-G7_CaronaAmigaFCTE_Entrega_02/#/Modelagem/2.1.ModelagemEstatica/Diagrama_de_classes).
