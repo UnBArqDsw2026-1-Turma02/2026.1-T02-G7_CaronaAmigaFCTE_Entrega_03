@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Executar Prototype (TypeScript)",
+      "runtimeExecutable": "npx.cmd",
+      "runtimeArgs": [
+        "tsx",
+        "docs/PadroesDeProjeto/3.1. Criacionais/src/main.ts"
+      ],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Executar Arquivo TypeScript Atual",
+      "runtimeExecutable": "npx.cmd",
+      "runtimeArgs": ["tsx", "${file}"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

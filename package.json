@@ -1,0 +1,14 @@
+{
+  "name": "carona-amiga-fcte-entrega-03",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check:ts": "tsc --noEmit",
+    "run:ts": "tsx",
+    "prototype": "tsx \"docs/PadroesDeProjeto/3.1. Criacionais/src/main.ts\""
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
