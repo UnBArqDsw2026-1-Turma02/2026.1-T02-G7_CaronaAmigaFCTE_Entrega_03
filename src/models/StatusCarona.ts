@@ -1,0 +1,6 @@
+export enum StatusCarona {
+	ATIVA = "ATIVA",
+	EM_ANDAMENTO = "EM_ANDAMENTO",
+	CONCLUIDA = "CONCLUIDA",
+	CANCELADA = "CANCELADA",
+}

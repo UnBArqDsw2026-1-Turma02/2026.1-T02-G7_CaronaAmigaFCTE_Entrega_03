@@ -1,11 +1,12 @@
 // src/models/Usuario.ts
 
 import type {
-  ContatoEmergencia,
   FabricaComunicacao,
   HistoricoViagem,
-  PreferenciaPareamento,
 } from "../domain/types";
+
+import type { ContatoEmergencia } from "./ContatoEmergencia";
+import type { PreferenciaPareamento } from "./PreferenciaPareamento";
 
 // 🔹 Separação em partes (ficou mais organizado mentalmente)
 type DadosBasicos = {

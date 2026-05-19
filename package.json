@@ -1,0 +1,13 @@
+{
+	"name": "caronaamigafcte-uml",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev:carona-avulsa": "tsx src/dev/runCaronaAvulsa.ts",
+		"typecheck": "tsc -p tsconfig.json --noEmit"
+	},
+	"devDependencies": {
+		"tsx": "^4.20.5",
+		"typescript": "^5.8.3"
+	}
+}
