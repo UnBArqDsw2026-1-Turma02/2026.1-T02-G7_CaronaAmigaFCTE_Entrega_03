@@ -6,7 +6,9 @@ _Resumo breve do que é o padrão e por que ele é relevante no Carona Amiga FCT
 
 ## Objetivos
 
-_Listar o que este artefato pretende documentar no projeto._
+Este artefato tem como objetivo registrar a finalidade do padrão Observer no contexto do Carona Amiga FCTE, destacando sua contribuição para uma arquitetura em que componentes interessados possam reagir a mudanças de estado sem depender diretamente uns dos outros.
+
+Também busca relacionar o padrão a situações do domínio em que eventos importantes, como alterações em solicitações, confirmações ou cancelamentos de caronas, precisam ser comunicados a outras partes do sistema de forma organizada, desacoplada e evolutiva.
 
 ## Metodologia
 
@@ -52,14 +54,16 @@ _Definir qual parte do Carona Amiga FCTE será usada como exemplo e indicar, de 
 
 ## Conclusão
 
-_Fechar o artefato com uma síntese do encaixe do padrão no domínio do projeto._
+O padrão Observer se encaixa no Carona Amiga FCTE como uma solução comportamental adequada para cenários em que mudanças relevantes no domínio precisam gerar reações em diferentes partes do sistema. Ao separar o elemento que sofre a alteração dos componentes que acompanham essa alteração, o padrão reduz o acoplamento, melhora a coesão das responsabilidades e favorece uma arquitetura mais flexível para notificações, atualizações de interface e regras associadas ao ciclo de vida das caronas.
 
 ## Referências Bibliográficas
 
-> <a id="ref1"></a> Referência 1 utilizada para embasar o conteúdo._
+> <a id="ref1"></a> REFACTORING GURU. **Observer**. Disponível em: <https://refactoring.guru/pt-br/design-patterns/observer>. Acesso em: 19 maio 2026.
+
+> <a id="ref2"></a> MOREIRA, Diogo. **Padrão Observer**. Disponível em: <https://diogomoreira.gitbook.io/padroes-de-projeto/padroes-gof-comportamentais/padrao-observer>. Acesso em: 19 maio 2026.
 
 ## Histórico de Versões
 
-| Versão | Data | Descrição | Autor(es) | Revisor(es) | Detalhes da revisão |
-| :----: | :--: | --------- | ----------- | ------ | :---: |
-| 1.0 | 12/05/2026 | Criação do esqueleto do documento | _a definir_ | _a definir_ | Estrutura básica com as seções principais |
+| Versão |    Data    | Descrição                          | Autor(es)                                                   | Revisor(es)                                               |                  Detalhes da revisão                   |
+| :----: | :--------: | ---------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------- | :----------------------------------------------------: |
+|  1.0   | 19/05/2026 | Adição dos objetivos e referências | [Karoline Luz da Conceição](https://github.com/KarolineLuz) | [Ana Victória Guedes da Costa](https://github.com/navicg) | Obetivos e Referências feitas de acordo com o projeto. |
