@@ -112,7 +112,17 @@ Como recorte, considera-se o **Histórico de Viagem** do Carona Amiga FCTE e a n
 
 ## Vídeo de explicação e execução
 
-Link do vídeo: _a definir_
+<iframe width="1321" height="743" src="https://www.youtube.com/embed/6h8a_KX_Igg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p style="text-align: center"><a href="https://youtu.be/6h8a_KX_Igg" target="_blank">Clique aqui para assistir no YouTube</a></p>
+
+<font size="2"><p style="text-align: center">Fonte: [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS),  [Luiza da Silva Pugas](https://github.com/luizaxx) e [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr), 2026.</p></font>
+
+---
+
+<iframe width="1321" height="743" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p style="text-align: center"><a href="https://youtu.be/" target="_blank">Clique aqui para assistir no YouTube</a></p>
 
 <font size="2"><p style="text-align: center">Fonte: [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS),  [Luiza da Silva Pugas](https://github.com/luizaxx) e [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr), 2026.</p></font>
 
@@ -229,3 +239,4 @@ O padrão **Bridge** contribui para manter o Carona Amiga FCTE evolutivo ao sepa
 | :----: | :--: | --------- | ----------- | ------ | :---: |
 | 1.0 | 15/05/2026 | Criação do esqueleto do documento | [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS) | [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr) | Estrutura básica com as seções principais |
 | 1.1 | 15/05/2026 | Preenchimento do conteúdo do padrão Bridge | [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS) | [Luiza da Silva Pugas](https://github.com/luizaxx) | Revisão de texto, referências e diagrama UML |
+| 1.2 | 18/05/2026 | Adição do vídeo explicativo e da img do UML | [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS) | [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr) e [Luiza da Silva Pugas](https://github.com/luizaxx) | Adição do implements no uml |
