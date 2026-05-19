@@ -26,9 +26,9 @@ Este artefato tem por objetivo:
 
 O conteúdo deste documento foi produzido a partir da análise dos seguintes artefatos do projeto:
 
-* (Diagrama de casos de uso)[https://unbarqdsw2026-1-turma02.github.io/2026.1-T02-G7_CaronaAmigaFCTE_Entrega_02/#/Modelagem/2.3.ModelagemOrganizacionalCasosDeUso/Diagrama_de_casos_de_uso](RF01–RF25), que identificou os fluxos de publicação e solicitação de caronas;
+* [Diagrama de casos de uso](https://unbarqdsw2026-1-turma02.github.io/2026.1-T02-G7_CaronaAmigaFCTE_Entrega_02/#/Modelagem/2.3.ModelagemOrganizacionalCasosDeUso/Diagrama_de_casos_de_uso)(RF01–RF25), que identificou os fluxos de publicação e solicitação de caronas;
 
-* (Diagrama de classes UML)[https://unbarqdsw2026-1-turma02.github.io/2026.1-T02-G7_CaronaAmigaFCTE_Entrega_02/#/Modelagem/2.1.ModelagemEstatica/Diagrama_de_classes], com **foco** na hierarquia Carona → CaronaAvulsa / CaronaRecorrente;
+* [Diagrama de classes UML](https://unbarqdsw2026-1-turma02.github.io/2026.1-T02-G7_CaronaAmigaFCTE_Entrega_02/#/Modelagem/2.1.ModelagemEstatica/Diagrama_de_classes), com **foco** na hierarquia Carona → CaronaAvulsa / CaronaRecorrente;
 
 * Requisitos funcionais RF06 (publicar carona), RF07 (solicitar carona) e RF09 (carona recorrente), extraídos do backlog do projeto. 
 
@@ -77,6 +77,22 @@ Sem o Template Method, o método publicar() teria de usar condicionais para dete
 ### Consequências
 
 _Registrar benefícios, custos e impactos de usar o padrão._
+
+## Vídeo de explicação e execução
+
+<iframe width="1321" height="743" src="https://www.youtube.com/embed/LP3ABwEFgag" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p style="text-align: center"><a href="https://youtu.be/LP3ABwEFgag" target="_blank">Clique aqui para assistir no YouTube</a></p>
+
+<font size="2"><p style="text-align: center">Fonte: [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS),  [Luiza da Silva Pugas](https://github.com/luizaxx) e [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr), 2026.</p></font>
+
+---
+
+<iframe width="1321" height="743" src="https://www.youtube.com/embed/" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<p style="text-align: center"><a href="https://youtu.be/" target="_blank">Clique aqui para assistir no YouTube</a></p>
+
+<font size="2"><p style="text-align: center">Fonte: [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS),  [Luiza da Silva Pugas](https://github.com/luizaxx) e [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr), 2026.</p></font>
 
 ### Implementação
 
