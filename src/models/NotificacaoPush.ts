@@ -22,6 +22,6 @@ export class NotificacaoPush extends Notificacao {
   public entregar(): void {
     // Placeholder: integração com provedor de push
     // eslint-disable-next-line no-console
-    console.log(NotificacaoPush entregue a ${this.getUsuarioId()} (urgente=${this.urgente}));
+    console.log(`NotificacaoPush entregue a ${this.getUsuarioId()} (urgente=${this.urgente})`);
   }
 }

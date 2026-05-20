@@ -17,6 +17,6 @@ export class MensagemChat extends Mensagem {
     // Aqui você integraria ao serviço de mensagens em tempo real.
     // Por enquanto apenas registra que a mensagem foi "enviada".
     // eslint-disable-next-line no-console
-    console.log(MensagemChat enviada para ${this.getDestinatario()} às ${this.dataEnvio.toISOString()});
+    console.log(`MensagemChat enviada para ${this.getDestinatario()} às ${this.dataEnvio.toISOString()}`);
   }
 }
