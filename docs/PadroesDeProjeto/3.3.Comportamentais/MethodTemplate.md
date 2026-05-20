@@ -1,57 +1,38 @@
-# Padrão de Projeto - Iterator
+# Padrão de Projeto - Template Method
 
 ## Introdução
 
-De acordo com o [Factory Guru](https://refactoring.guru/pt-br/design-patterns/factory-method), o **Template Method**  é um padrão de projeto comportamental que define o esqueleto de um algoritmo na superclasse mas deixa as subclasses sobrescreverem etapas específicas do algoritmo sem modificar sua estrutura.
+O **Template Method** é um padrão de projeto comportamental que define o esqueleto de um algoritmo na superclasse e permite que subclasses sobrescrevam etapas específicas sem modificar a estrutura do algoritmo [[1]](#ref1).
 
-No contexto do **Carona Amiga FCTE** — aplicativo de compartilhamento de caronas voltado à comunidade universitária da FCTE/UnB — o padrão é especialmente relevante porque o sistema oferece diferentes modalidades de carona (avulsa e recorrente) que compartilham um fluxo de publicação comum, mas diferem em como validam dados, notificam passageiros e confirmam embarques. O Template Method é a solução natural para evitar duplicação de código e garantir consistência entre essas modalidades.
-
+No contexto do **Carona Amiga FCTE**, o padrão se encaixa bem na publicação de caronas com modalidades diferentes (ex.: **avulsa** e **recorrente**): as modalidades compartilham o mesmo fluxo geral, mas diferem em regras de validação, notificação e confirmação.
 
 ## Objetivos
 
-Este artefato tem por objetivo:
-
-* Documentar formalmente a aplicação do padrão Template Method no projeto Carona Amiga FCTE;
-
-* Descrever os participantes do padrão e como se mapeiam às classes do domínio;
-
-* Apresentar um recorte do diagrama de classes que evidencia a estrutura do padrão;
-
-* Registrar as consequências — benefícios e custos — da adoção do padrão no sistema;
-
-* Servir como referência para a equipe de desenvolvimento durante a fase de implementação.
-
+- Documentar a aplicação do padrão **Template Method** no projeto.
+- Descrever os participantes do padrão e o mapeamento para classes do domínio.
+- Apresentar um recorte do diagrama que evidencia a estrutura do padrão.
+- Registrar consequências (benefícios e custos) da adoção do padrão.
 
 ## Metodologia
 
-O conteúdo deste documento foi produzido a partir da análise dos seguintes artefatos do projeto:
+Como ponto de partida, foi utilizada a discussão registrada na [Ata 1](../3.5.IniciativasExtras/ata1.md) (com gravação da reunião: https://youtu.be/y6FIosTab0s).
 
-* [Diagrama de casos de uso](https://unbarqdsw2026-1-turma02.github.io/2026.1-T02-G7_CaronaAmigaFCTE_Entrega_02/#/Modelagem/2.3.ModelagemOrganizacionalCasosDeUso/Diagrama_de_casos_de_uso)(RF01–RF25), que identificou os fluxos de publicação e solicitação de caronas;
+1. Foi consultada a descrição do padrão **Template Method** no Refactoring.Guru [[1]](#ref1).
+2. Foi analisado o [Diagrama de Classes](https://unbarqdsw2026-1-turma02.github.io/2026.1-T02-G7_CaronaAmigaFCTE_Entrega_02/#/Modelagem/2.1.ModelagemEstatica/Diagrama_de_classes) no recorte da hierarquia `Carona` → `CaronaAvulsa`/`CaronaRecorrente`.
+3. Foi relacionado o recorte aos requisitos de publicação de carona (ex.: RF06) e às necessidades do domínio.
+4. Foi elaborado um exemplo de implementação em TypeScript para guiar a implementação no código.
 
-* [Diagrama de classes UML](https://unbarqdsw2026-1-turma02.github.io/2026.1-T02-G7_CaronaAmigaFCTE_Entrega_02/#/Modelagem/2.1.ModelagemEstatica/Diagrama_de_classes), com **foco** na hierarquia Carona → CaronaAvulsa / CaronaRecorrente;
-
-* Requisitos funcionais RF06 (publicar carona), RF07 (solicitar carona) e RF09 (carona recorrente), extraídos do backlog do projeto. 
-
+---
 
 ## Explicação do Padrão
 
-O Template Method define o esqueleto de um algoritmo em uma operação, postergando alguns passos para as subclasses. Conforme descreve o Refactoring Guru, o padrão 
-
-*"fornece uma interface para criar objetos em uma superclasse, mas permite que as subclasses alterem o tipo de objetos que serão criados"* ([Refactoring Guru — Factory Method](https://refactoring.guru/pt-br/design-patterns/factory-method))
-
-No Template Method especificamente, o algoritmo é fixo na superclasse e os *passos primitivos* são delegados às subclasses, que os implementam conforme sua necessidade.
+### Intenção
+Separar o que é fixo (o **esqueleto** do algoritmo) do que varia (as **etapas primitivas**), permitindo extensão por herança com polimorfismo [[1]](#ref1).
 
 ### Motivação
+Publicar uma carona tende a seguir sempre uma sequência (validar → notificar → confirmar → finalizar → gerar histórico), mas as regras mudam de acordo com a modalidade.
 
-No Carona Amiga FCTE, o processo de publicação de uma carona envolve sempre as mesmas etapas gerais: validar os dados informados, notificar passageiros cadastrados na rota e confirmar o embarque. Contudo, cada modalidade executa esses passos de forma diferente:
-
-* Uma CaronaAvulsa valida apenas origem, destino e horário pontual;
-
-* Uma CaronaRecorrente precisa validar também os dias da semana e o horário fixo, e pausar a recorrência quando necessário.
-
-Sem o Template Method, o método publicar() teria de usar condicionais para detectar o tipo de carona e executar a lógica correta — o que viola o Princípio Aberto/Fechado e dificulta a manutenção. Como destaca a DevMedia:
-
-*"O pattern Template Method nos auxilia principalmente quando temos uma sequência de tarefas ou um algoritmo com passos que precisam ser implementados de forma diferente por cada subclasse"* ([DevMedia — Patterns: Template Method](https://www.devmedia.com.br/patterns-template-method/18953))
+Sem Template Method, a tendência é concentrar tudo em um único método cheio de condicionais por tipo de carona, o que aumenta acoplamento e dificulta manutenção.
 
 ## Ilustração do Padrão
 <div align="center">
@@ -62,21 +43,82 @@ Sem o Template Method, o método publicar() teria de usar condicionais para dete
 <font size="2"><p style="text-align: center">Fonte: Imagem gerada por [Claude AI](https://claude.ai/new)</p></font>
 </div>
 
+---
+
+<div align="center">
+              Figura 2: Exemplo de aplicação do padrão Template Method.
+
+![Guru](../assets/guruT.png)
+
+<font size="2"><p style="text-align: center">Fonte: Refactoring.Guru [[1]](#ref1).</p></font>
+</div>
+
+---
+
+<div align="center">
+              Figura 3: Exemplo de aplicação do padrão Template Method.
+
+![Slides](../assets/template-method.png)
+
+<font size="2"><p style="text-align: center">Fonte: Serrano, Milene [[4]](#ref4).</p></font>
+
+</div>
+
+---
+
+### Aplicabilidade
+Use Template Method quando:
+
+- existe um fluxo principal que deve manter a ordem das etapas;
+- algumas etapas variam por modalidade;
+- novas modalidades devem ser adicionadas sem editar o algoritmo principal.
+
+### Participantes
+
+<font size="3"><p style="text-align: center">Tabela 1: Participantes do Template Method</p></font>
+
+| Papel | Responsabilidade | Exemplo no Carona Amiga FCTE |
+|---|---|---|
+| **AbstractClass** | Define `publicar()` e declara os passos primitivos | `Carona` |
+| **ConcreteClass** | Implementa os passos primitivos | `CaronaAvulsa`, `CaronaRecorrente` |
+| **Client** | Usa o algoritmo via tipo abstrato | `Motorista`/Camada de aplicação |
+
+## Recorte do Projeto e Diagrama UML
+
+O recorte proposto é a publicação de caronas:
+
+- `Carona` (abstrata) concentra o algoritmo `publicar()`.
+- `CaronaAvulsa` e `CaronaRecorrente` implementam as etapas primitivas.
+
+<div align="center">
+              Figura 4: Diagrama UML do Template Method no recorte do módulo.
+
+![Diagrama UML do Template Method](../assets/template-method-uml.png)
+
+<font size="2"><p style="text-align: center">Fonte: [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS),  [Luiza da Silva Pugas](https://github.com/luizaxx) e [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr), 2026.</p></font>
+</div>
+
 ## Colaborações
 
- fluxo de colaboração entre os participantes é o seguinte:
+- O cliente cria/obtém uma instância concreta (`CaronaAvulsa` ou `CaronaRecorrente`).
+- O cliente chama `publicar()`.
+- O template `publicar()` executa as etapas na ordem definida.
+- Cada etapa é resolvida na implementação concreta via polimorfismo.
 
-* O cliente (ex.: Motorista) invoca publicar() na instância concreta (CaronaAvulsa ou CaronaRecorrente);
+## Consequências
 
-* O método publicar(), definido em Carona como final, executa o esqueleto: chama sequencialmente validarCarona(), notificarPassageiros() e confirmarEmbarque();
+Benefícios:
 
-* Cada chamada é despachada pelo polimorfismo para a implementação correta na subclasse;
+- reduz duplicação: o fluxo fica em um único lugar.
+- garante consistência: todas as modalidades seguem a mesma ordem.
+- facilita extensão: adicionar modalidade = criar subclasse.
 
-* O cliente não conhece nem depende da subclasse concreta — apenas trabalha com o tipo Carona.
+Custos:
 
-### Consequências
+- aumenta hierarquia de classes.
+- mudanças no algoritmo impactam todas as modalidades.
 
-_Registrar benefícios, custos e impactos de usar o padrão._
+---
 
 ## Vídeo de explicação e execução
 
@@ -84,7 +126,7 @@ _Registrar benefícios, custos e impactos de usar o padrão._
 
 <p style="text-align: center"><a href="https://youtu.be/LP3ABwEFgag" target="_blank">Clique aqui para assistir no YouTube</a></p>
 
-<font size="2"><p style="text-align: center">Fonte: [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS),  [Luiza da Silva Pugas](https://github.com/luizaxx) e [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr), 2026.</p></font>
+<font size="2"><p style="text-align: center">Fonte: [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS), [Luiza da Silva Pugas](https://github.com/luizaxx) e [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr), 2026.</p></font>
 
 ---
 
@@ -94,42 +136,96 @@ _Registrar benefícios, custos e impactos de usar o padrão._
 
 <font size="2"><p style="text-align: center">Fonte: [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS),  [Luiza da Silva Pugas](https://github.com/luizaxx) e [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr), 2026.</p></font>
 
+---
+
 ### Implementação
 
 <details>
-  <summary><strong>Código para Method Template (Documento/Recibo + GeradorDeArquivo)</strong></summary>
+  <summary><strong>Exemplo didático do Template Method no recorte (Carona + modalidades)</strong></summary>
 
+```ts
+// AbstractClass
+abstract class Carona {
+  // template method
+  public publicar(): void {
+    this.validarCarona();
+    this.notificarPassageiros();
+    this.confirmarEmbarque();
+    this.finalizarCarona();
+    this.gerarHistorico();
+  }
 
+  protected abstract validarCarona(): void;
+  protected abstract notificarPassageiros(): void;
+  protected abstract confirmarEmbarque(): void;
+  protected abstract finalizarCarona(): void;
+  protected abstract gerarHistorico(): void;
+}
 
+// ConcreteClass
+class CaronaAvulsa extends Carona {
+  protected validarCarona(): void {
+    // regras da carona avulsa
+  }
+  protected notificarPassageiros(): void {
+    // notificação pontual
+  }
+  protected confirmarEmbarque(): void {
+    // confirmação no momento do embarque
+  }
+  protected finalizarCarona(): void {
+    // finaliza a carona
+  }
+  protected gerarHistorico(): void {
+    // registra histórico
+  }
+}
+
+class CaronaRecorrente extends Carona {
+  protected validarCarona(): void {
+    // regras de recorrência (dias/horários)
+  }
+  protected notificarPassageiros(): void {
+    // notificação por ocorrência
+  }
+  protected confirmarEmbarque(): void {
+    // confirmação por ocorrência
+  }
+  protected finalizarCarona(): void {
+    // finaliza ocorrência
+  }
+  protected gerarHistorico(): void {
+    // histórico por ocorrência
+  }
+}
+```
+
+> Observação: a implementação real no repositório está em `src/models/Carona.ts` e `src/models/CaronaAvulsa.ts`.
 
 </details>
 
-### Padrões Relacionados
-
-_Citar padrões que se conectam ao padrão escolhido._
-
+---
 
 ## Conclusão
 
-O padrão Template Method encaixa-se de forma natural na hierarquia de caronas do Carona Amiga FCTE. A existência de um fluxo de publicação com etapas obrigatórias e comuns — validação, notificação e confirmação — aliada à necessidade de comportamentos distintos entre CaronaAvulsa e CaronaRecorrente, configura exatamente o problema que o padrão foi projetado para resolver.
+O Template Method se encaixa naturalmente no domínio ao centralizar o fluxo de publicação em `Carona.publicar()` e deixar as modalidades (`CaronaAvulsa`, `CaronaRecorrente`) implementarem apenas os detalhes variáveis. Isso melhora consistência, reduz duplicação e facilita evolução do sistema.
 
-A adoção do padrão garante que o código de publicação seja escrito uma única vez em Carona.publicar(), enquanto as subclasses se concentram apenas nas suas particularidades. Isso reduz acoplamento, facilita testes e abre espaço para novas modalidades serem adicionadas sem modificar o código existente.
-
-Como próximo passo natural, recomenda-se complementar a solução com o Factory Method, responsável por instanciar a subclasse correta com base no tipo de carona selecionado pelo motorista — separando assim a criação dos objetos da execução do algoritmo.
-
+---
 
 ## Referências Bibliográficas
 
-> <a id="ref1"></a> REFACTORING GURU. *Factory Method.* [https://refactoring.guru/pt-br/design-patterns/factory-method](https://refactoring.guru/pt-br/design-patterns/factory-method). Acesso em: maio 2026.
+> <a id="ref1"></a>1. Refactoring.Guru. *Template Method.* Disponível em: https://refactoring.guru/pt-br/design-patterns/template-method. Acesso em: maio 2026.
+>
+> <a id="ref2"></a>2. DevMedia. *Patterns: Template Method.* Disponível em: https://www.devmedia.com.br/patterns-template-method/18953. Acesso em: maio 2026.
+>
+> <a id="ref3"></a>3. GAMMA, Erich; HELM, Richard; JOHNSON, Ralph; VLISSIDES, John. *Design Patterns: Elements of Reusable Object-Oriented Software*. Addison-Wesley, 1994.
+>
+> <a id="ref4"></a>4. SERRANO, Milene. *Arquitetura e Desenho de Software — Aula GoFs Comportamentais*. Slides da disciplina. Disponível em: https://aprender3.unb.br. Acesso em: maio 2026.
 
-> <a id="ref2"></a> DEVMEDIA. *Patterns: Template Method.* [https://www.devmedia.com.br/patterns-template-method/18953](https://www.devmedia.com.br/patterns-template-method/18953). Acesso em: maio 2026.
-
-> <a id="ref3"></a> AWAN, Talha. *GOF Design Patterns in React JS. TecHighness,* 2022\. [https://www.techighness.com/post/gof-design-patterns-react-js/](https://www.techighness.com/post/gof-design-patterns-react-js/). Acesso em: maio 2026.
-
-## Histórico de Versões
 ## Histórico de Versões
 
 | Versão | Data | Descrição | Autor(es) | Revisor(es) | Detalhes da revisão |
 | :----: | :--: | --------- | ----------- | ------ | :---: |
-| 1.0 | 16/05/2026 | Criação do esqueleto do documento | [Luiza da Silva Pugas](https://github.com/luizaxx)| [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr) | Estrutura básica com as seções principais |
-| 1.1 | 16/05/2026 | Preenchimento do conteúdo do padrão Method Template | [Luiza da Silva Pugas](https://github.com/luizaxx)  |[João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS) | Revisão de texto, código quebrado, imagens corrretas |
+| 1.0 | 16/05/2026 | Criação do esqueleto do documento | [Luiza da Silva Pugas](https://github.com/luizaxx) | [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr) | Estrutura básica com as seções principais |
+| 1.1 | 16/05/2026 | Preenchimento do conteúdo do padrão Template Method | [Luiza da Silva Pugas](https://github.com/luizaxx) | [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS) | Revisão de texto e ajustes gerais |
+| 1.2 | 19/05/2026 | Padronização no estilo do Bridge + correções de referências e placeholders | [João Marcos Moraes de Andrade](https://github.com/JJOAOMARCOSS) | [Luiza da Silva Pugas](https://github.com/luizaxx) e [Wanjo Christopher Paraizo Escobar](https://github.com/wChrstphr) | Remoção de iframe vazio, código e estrutura coerentes com o recorte |
