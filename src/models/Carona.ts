@@ -81,10 +81,7 @@ export abstract class Carona {
 		return this.motorista;
 	}
 
-	// ========================
-	// TEMPLATE METHOD (UML)
-	// ========================
-
+	// GoF Template Method
 	// <<template>>
 	public publicar(): void {
 		this.validarCarona();
@@ -94,37 +91,20 @@ export abstract class Carona {
 		const historico = this.gerarHistorico();
 		this.aplicarHistoricoGerado(historico);
 	}
-
-	// ========================
-	// PRIMITIVAS (UML)
-	// ========================
-
 	// <<primitive>>
 	protected abstract validarCarona(): void;
-
 	// <<primitive>>
 	protected abstract notificarPassageiros(): void;
-
 	// <<primitive>>
 	protected abstract confirmarEmbarque(): void;
-
 	// <<primitive>>
 	protected abstract finalizarCarona(): void;
-
 	// <<primitive>>
 	protected abstract gerarHistorico(): HistoricoViagem;
-
-	// ========================
-	// OUTROS COMPORTAMENTOS (UML)
-	// ========================
 
 	public abstract cancelar(): void;
 
 	public abstract detectarDesvio(): boolean;
-
-	// ========================
-	// MÉTODOS SEMÂNTICOS (pro domínio)
-	// ========================
 
 	protected adicionarPassageiro(passageiro: Passageiro): void {
 		if (this.vagasDisponiveis <= 0) {
@@ -139,18 +119,15 @@ export abstract class Carona {
 	}
 
 	protected aplicarHistoricoGerado(_historico: HistoricoViagem): void {
-		// TODO: associar histórico ao motorista/passageiros (quando `HistoricoViagem` virar classe do domínio)
+		// @TODO: associar histórico ao motorista/passageiros (quando `HistoricoViagem` virar classe do domínio)
 	}
 
-	// ========================
-	// VALIDAÇÕES
-	// ========================
-
-	private static validarHorarioPartida(valor: Date): Date {
-		if (!(valor instanceof Date) || Number.isNaN(valor.getTime())) {
+	// Validações
+	private static validarHorarioPartida(date: Date): Date {
+		if (!(date instanceof Date) || Number.isNaN(date.getTime())) {
 			throw new Error("Horário de partida inválido.");
 		}
-		return valor;
+		return date;
 	}
 
 	private static validarVagasDisponiveis(valor: number): number {
@@ -168,6 +145,7 @@ export abstract class Carona {
 	}
 
 	private static validarCodigoVerificacao(valor: string): string {
+		// Validação boba inicial
 		const texto = valor.trim();
 		if (texto.length === 0) {
 			throw new Error("Código de verificação é obrigatório.");
