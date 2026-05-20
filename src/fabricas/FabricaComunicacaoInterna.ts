@@ -1,5 +1,7 @@
 import { Mensagem } from "../models/Mensagem";
+import { MensagemSMS } from "../models/MensagemSMS";
 import { Notificacao } from "../models/Notificacao";
+import { NotificacaoPush } from "../models/NotificacaoPush";
 
 export class FabricaComunicacaoInterna {
     private criarMensagem(
@@ -7,14 +9,21 @@ export class FabricaComunicacaoInterna {
         conteudo: string,
         remetente?: string,
     ): Mensagem {
-        return new MensagemSMS(remetente, destinatario, conteudo);
+        return new MensagemSMS({
+            numeroTelefone: destinatario,
+            conteudo: conteudo,
+            remetenteId: remetente,
+        });
     }
 
     private criarNotificacao(
-        usuarioId: string,
+        usuario: string,
         titulo: string,
-        mensagem: string,
+        conteudo: string,
     ): Notificacao {
-        return new AlertaEmergência(usuarioId, titulo, mensagem);
+        return new NotificacaoPush({ 
+            usuarioId: usuario, 
+            titulo: titulo, 
+            mensagem: conteudo });
     }
 }
