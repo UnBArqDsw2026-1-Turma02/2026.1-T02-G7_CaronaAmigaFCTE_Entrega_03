@@ -36,7 +36,7 @@ export class MensagemSMS extends Mensagem {
   public enviar(): void {
     // Placeholder: integrar com gateway SMS real
     // eslint-disable-next-line no-console
-    console.log(SMS enviado para ${this.numeroTelefone}: ${this.getConteudo()});
+    console.log(`SMS enviado para ${this.numeroTelefone}: ${this.getConteudo()}`);
   }
 
   private static validarNumero(valor: string): string {
